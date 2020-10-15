@@ -7,36 +7,36 @@
         <script src="/static/a.js" defer></script>
     </head>
     <body>
-        <form id="data" class="" method="">
-            <div class="formCont">
+        <div id="data" class="" method="">
+            <form class="formCont">
                 <div class="formdiv">
                     <label for="fullName">Full Name:</label>
                     <input type="text" id="fullName" name="fullName" required>
                     <label for="phoneNum">Phone:</label>
-                    <input type="text" id="phoneNum" name="phoneNum" required>
+                    <input type="text" id="phoneNum" name="phoneNum" >
                     <label for="email">E-mail:</label>
-                    <input type="text" id="email" name="email" required>
+                    <input type="text" id="email" name="email" >
                 </div>
                 <div class="formdiv">
                     <label for="ZIP">Zip Code:</label>
-                    <input type="text" id="zip" name="zip" required>
+                    <input type="text" id="zip" name="zip" >
                     <label for="city">City:</label>
-                    <input type="text" id="city" name="city" required>
+                    <input type="text" id="city" name="city" >
                     <label for="address">Address:</label>
-                    <input type="text" id="address" name="address" required>
+                    <input type="text" id="address" name="address" >
                 </div>
                 <div class="formdiv">
                     <label for="option">Option:</label>
-                    <select id="option" name="option" required>
+                    <select id="option" name="option" >
                         <option value="standard">Standard</option>
                         <option value="medium">Medium</option>
                         <option value="extra">Extra</option>
                         <option value="optimal">Optimal</option>
                     </select>
-                    <button id="submitBut" type="submit">Submit</button>
+                    <button id="submitBut" type="button">Submit</button>
                 </div>
-            </div>
-        </form>
+            </form>
+        </div>
         <div id="formattedData"></div>
     </body>
 </html>
