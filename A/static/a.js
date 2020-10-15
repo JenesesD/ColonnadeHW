@@ -1,27 +1,31 @@
 const packages = {
     "standard": {
-        "balesetbizt": "50,000,000",
-        "kp": "0",
-        "poggyász": "0",
-        "poggylimit": "200,000,000"
+        "name": "Standard",
+        "insurance": "50,000,000",
+        "cash": "0",
+        "luggage": "0",
+        "luggageLimit": "200,000,000"
     },
     "medium": {
-        "balesetbizt": "100,000,000",
-        "kp": "0",
-        "poggyász": "50,000",
-        "poggylimit": "200,000,000"
+        "name": "Medium",
+        "insurance": "100,000,000",
+        "cash": "0",
+        "luggage": "50,000",
+        "luggageLimit": "200,000,000"
     },
     "extra": {
-        "balesetbizt": "150,000,000",
-        "kp": "100,000",
-        "poggyász": "100,000",
-        "poggylimit": "200,000,000"
+        "name": "Extra",
+        "insurance": "150,000,000",
+        "cash": "100,000",
+        "luggage": "100,000",
+        "luggageLimit": "200,000,000"
     },
     "optimal": {
-        "balesetbizt": "200,000,000",
-        "kp": "100,000",
-        "poggyász": "200,000",
-        "poggylimit": "200,000,000"
+        "name": "Optimal",
+        "insurance": "200,000,000",
+        "cash": "100,000",
+        "luggage": "200,000",
+        "luggageLimit": "200,000,000"
     }
 }
 
@@ -44,7 +48,62 @@ function gatherData() {
 }
 
 function displayData(data) {
-    console.log(data)
+    document.querySelector("#formattedData").innerHTML = 
+            `<div class='items'>
+                <table id='personalInfo'>
+                    <tr>
+                        <td>Full Name</td>
+                        <td>${data.name ? data.name: "-"}</td>
+                    </tr>
+                    <tr>
+                        <td>Phone Number</td>
+                        <td>${data.phone ? data.phone: "-"}</td>
+                    </tr>
+                    <tr>
+                        <td>E-mail Address</td>
+                        <td>${data.email ? data.email: "-"}</td>
+                    </tr>    
+                    <tr>
+                        <td>ZIP Code</td>
+                        <td>${data.zip ? data.zip: "-"}</td>
+                    </tr>
+                    <tr>
+                        <td>City</td>
+                        <td>${data.city ? data.city: "-"}</td>
+                    </tr>
+                    <tr>
+                        <td>Home Address</td>
+                        <td>${data.address ? data.address: "-"}</td>
+                    </tr>
+                    <tr>
+                        <td>Option</td>
+                        <td>${data.option.name ? data.option.name: "-"}</td>
+                    </tr>          
+                </table>
+                <table id='packageInfo'>
+                    <tr>
+                        <th>Chosen Option</th>
+                        <th>${data.option.name}</th>
+                    </tr>
+                    <tr>
+                        <th>Balesetbiztosítási Limit</th>
+                        <th>${data.option.insurance} Ft</th>
+                    </tr>
+                    <tr>
+                        <th>Poggyász Limit</th>
+                        <th>${data.option.luggageLimit} Ft</th>
+                    </tr>
+                    <tr>
+                        <th>Készpénz</th>
+                        <th>${data.option.cash} Ft</th>
+                    </tr>
+                    <tr>
+                        <th>Poggyász</th>
+                        <th>${data.option.luggage} Ft</th>
+                    </tr>
+                </table>
+            </div>
+            `
 }
 
 main();
